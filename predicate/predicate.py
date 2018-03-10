@@ -374,7 +374,7 @@ def get_values_list(obj, *lookups, **kwargs):
 
     Other than ordering, this should behave identically to the following for
     Django model instances and lookups on django fields:
-        SomeModel.objects.filter(pk=obj.pk).values_list(*lookups, **kwargs)
+        list(SomeModel.objects.filter(pk=obj.pk).values_list(*lookups, **kwargs))
     """
     flat = kwargs.pop('flat', False)
     if kwargs:
